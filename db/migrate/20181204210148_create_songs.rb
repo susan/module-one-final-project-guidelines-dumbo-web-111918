@@ -3,7 +3,7 @@ class CreateSongs < ActiveRecord::Migration[5.0]
     #create first table for Song Class
     create_table :songs do |t|
       t.string :title
-      t.float :duratiion
+      t.float :duration
       t.boolean :inward
       t.boolean :outward
       t.boolean :onward
