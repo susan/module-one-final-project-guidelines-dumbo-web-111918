@@ -1,0 +1,27 @@
+Song.create(title: "Empire State of Mind", duration: 4.37, inward: , outward: , onward: true, vocal: true, instrumental: )
+
+Song.create(title: "Paparazzi", duration: 4.15, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Divenire", duration: 3.48, inward: true, outward: , onward: , vocal: , instrumental: true)
+
+Song.create(title: "Praise You", duration: 5.24, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Reverie", duration: 4.40, inward: true, outward: , onward: , vocal: , instrumental: true)
+
+Song.create(title: "Get on the Good Foot", duration: 3.35, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Get on the Good Foot", duration: 3.35, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Humanised", duration: 3.35, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Flow", duration: 4.19, inward: , outward: , onward: true, vocal: , instrumental: true)
+
+Song.create(title: "The Flower Garden", duration: 2.58, inward: true, outward: , onward: , vocal: , instrumental: true)
+
+Song.create(title: "Om Namah Shivaya", duration: 4.51, inward: , outward: true, onward: , vocal: true, instrumental: )
+
+Song.create(title: "Prayer for Peace", duration: 3.21, inward: true, outward: , onward: , vocal: , instrumental: true)
+
+Song.create(title: "Moniebah", duration: 3.22, inward: , outward: true, onward: , vocal: , instrumental: true)
+
+Song.create(title: "You Couldn't Be Cuter", duration: 3.22, inward: , outward: true, onward: , vocal: true, instrumental: )
