@@ -1,3 +1,4 @@
+#only run seed file once! otherwise will create multiple
 empire = Song.create(title: "Empire State of Mind", duration: 4.37)
 
 vocal = Category.create(description: "vocal")
@@ -65,3 +66,4 @@ SongCategory.create(song: moniebah, category: outward)
 cuter = Song.create(title: "You Couldn't Be Cuter", duration: 3.22)
 SongCategory.create(song: cuter, category: vocal)
 SongCategory.create(song: cuter, category: outward)
+
