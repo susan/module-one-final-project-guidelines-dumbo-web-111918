@@ -1,6 +1,8 @@
 class Song < ActiveRecord::Base
 	has_many :song_categories
 	has_many :categories, through: :song_categories
+	has_many :info_workshop_songs 
+	has_many :info_workshops, through: :info_workshop_songs
 
 	# def song_categories
 	# 	SongCategory.all.select do |song_category|
