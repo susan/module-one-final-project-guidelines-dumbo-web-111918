@@ -23,8 +23,11 @@ class Song < ActiveRecord::Base
 	end
 
   def self.find_by(choice1, choice2)
-    Song.all.select do |song|
+    song_objects = Song.all.select do |song|
       song.category_names.include?(choice1) && song.category_names.include?(choice2)
+    end
+    song_objects.map do |song|
+    	song.title
     end
   end
 end
