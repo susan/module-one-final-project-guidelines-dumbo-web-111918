@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
 	has_many :song_categories
 	has_many :categories, through: :song_categories
-	has_many :info_workshop_songs 
+	has_many :info_workshop_songs
 	has_many :info_workshops, through: :info_workshop_songs
 
 	# def song_categories
@@ -22,9 +22,13 @@ class Song < ActiveRecord::Base
 		end
 	end
 
- #  def find_by(category1, category2)
- #  	Song.all.include? |song|
- #      song.category_names == category1 && song.category_names == category2
- #     end
- #  end
+  def self.find_by(choice1, choice2)
+    Song.all.select do |song|
+      song.category_names.include?(choice1) && song.category_names.include?(choice2)
+    end
+  end
 end
+
+
+
+
