@@ -1,7 +1,5 @@
 require_relative '../config/environment'
 
-
-
 def runs_options
 
 user_input = menu_input
@@ -11,30 +9,30 @@ if user_input == "exit"
 end
 
     while user_input != "exit"
-     puts "Please enter an option"
-     input = gets.chomp
+    #  puts "Please enter an option"
+    #  input = gets.chomp
 
-        case input 
+        case user_input 
         when "menu"
-         menu
-        #  user_input
+        menu
+        user_input = runs_options   #  user_input
         when "create"
          initial_workid = create_workshop_title
          song_choice = user_song_choice_for_playlist
 
          create_playlist(initial_workid, song_choice)
          user_input_for_playlist_continue(initial_workid, song_choice)
-         user_input
+         user_input = runs_options
         when "deleteSong"
          delete_song
          menu
-         user_input
+         user_input = runs_options
         when "deletePlaylist"
          delete_workshop_selection
          menu
-         user_input
+         user_input= runs_options
       end
-        runs_options
+      
     end 
       
 end
