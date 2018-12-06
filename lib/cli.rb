@@ -1,11 +1,11 @@
-
+require 'pry'
   # add: add a song to an existing playlist
   #  see: displays the songs in a playlist
 def menu
     puts "Here are your options:
      - menu: displays this menu
      - create: create a playlist and add songs
-     - deleteSong: deletes a song from an existing playlist  
+     - deleteSong: deletes a song from an existing playlist
      - deletePlaylist: delete a playlist
      - exit: exits this program"
 end
@@ -15,13 +15,13 @@ end
     input = gets.chomp
   end
 
-  def welcome 
+  def welcome
     puts "Welcome Playlist Creator!"
   end
 
   def exit
-    puts "Good Bye" 
-  end 
+    puts "Goodbye"
+  end
 
   def exit_workshop_playlist
     puts "Finished playlist, back to main menu"
@@ -52,21 +52,23 @@ end
 
     puts "Do you want this song to be vocal or instrumental"
     choice2 = gets.chomp
-      # until [vocal, instrumental].include? choice2 do
-      #   puts "Please enter vocal or instrumental.>"
-      # choice2 = gets.chomp
-      # end
+       until ["vocal", "instrumental"].include? choice2 do
+         puts "Please enter vocal or instrumental.>"
+       choice2 = gets.chomp
+       end
 
     selection = Song.find_by(choice1, choice2)
     puts selection
+    #binding.pry
     song_choice = ""
     puts "Select a song by title"
     song_choice = gets.chomp
-
-      # until selection.include? song_choice do
-      #   puts "Please select a song by title.>"
-      # song_choice = gets.chomp
-      # end
+     #binding.pry
+        until selection.include? song_choice do
+          puts "Please select a song by title."
+        song_choice = gets.chomp
+        end
+      song_choice
     end
 
 # song_choice = user_song_choice_for_playlist
@@ -74,6 +76,7 @@ end
 
 def add_song(initial_workid, song_choice)
     song_object = Song.where(:title => song_choice)
+    #binding.pry
     songid = song_object[0].id
     our_song = InfoWorkshopSong.create(song_id: songid, info_workshop_id: initial_workid)
 end
@@ -82,10 +85,11 @@ def user_input
   puts "Type next if you want to add another song. Or type quit to go back to the menu."
   input = gets.chomp
 
-    # until [next, quit].include? input do
-    #   puts "Type next if you want to add another song. Or type quit to go back to the menu.>"
-    #   input = gets.chomp
-    # end
+     until ["next", "quit"].include? input do
+       puts "Type next if you want to add another song. Or type quit to go back to the menu.>"
+      input = gets.chomp
+     end
+     input
  end
 
  #is this the recursive case?
@@ -142,11 +146,11 @@ def delete_workshop_selection
     puts "Select the number of the playlist that you want to edit"
     playlist_id = gets.chomp.to_i
     play_list_songs = InfoWorkshopSong.where(info_workshop_id: playlist_id)
-  
+
     song_name_of_playlist =  play_list_songs.map do |el|
       "#{el.id}) #{el.song.title} "
     end
-    
+
     puts song_name_of_playlist
 
     puts "Select the song number you want to delete"
@@ -160,7 +164,7 @@ def delete_workshop_selection
     # have a user select a infoworkshop song id to delete
     # delete said song
     # song = Song.find(id)
-    # song.destroy  
+    # song.destroy
   end
 
 
