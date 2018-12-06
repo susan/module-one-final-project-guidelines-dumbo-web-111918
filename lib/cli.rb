@@ -3,8 +3,10 @@
     puts "Here are your options:
      - menu: displays this menu
        create: create a playlist and add songs
-     - add: add a song to an existing playlist
+     - #add: add a song to an existing playlist
+       delete: delete a song from an existing playlist
        see: displays the songs in a playlist
+
      - exit: exits this program"
   end
 
@@ -49,30 +51,31 @@ def add_song(initial_workid, song_choice)
 end
 
 def user_input
-  puts "Type next_song if you want to add another song. Or type quit to go back to the menu."
+  puts "Type next if you want to add another song. Or type quit to go back to the menu."
   input = gets.chomp
  end
 
  #is this the recursive case?
  def user_input_for_playlist_continue(initial_workid, song)
    user_input
-   if input == "quit"
+   if user_input == "quit"
      return exit_workshop_playlist
      #break
    end
-   while input != "quit"
-   	puts "Type next_song if you want to add another song. Or type quit to go back to the menu."
-    input = gets.chomp
-     if user_input == "next_song"
+   while user_input != "quit"
+   	#puts "Type next if you want to add another song. Or type quit to go back to the menu."
+    #input = gets.chomp
+      #if user_input == "next"
     	 next_song = user_song_choice_for_playlist
-    	add_song(initial_workid, next_song)
-    	user_input
+    	 add_song(initial_workid, next_song)
+    	 #user_input
      #puts "Type next if you want to add another song. Or type quit to go back to the menu"
-    # elsif input == "quit"
+     #elsif user_input == "quit"
      	 #return exit_workshop_playlist
-     end
-  	user_input_for_playlist_continue(initial_workid, song)
+     	user_input_for_playlist_continue(initial_workid, song)
+     #end
    end
+
  end
 
 # def user_input_for_playlist_continue
@@ -97,6 +100,10 @@ def user_input
     add_song(initial_workid, song)
  end
 
+
+def delete_song
+	 puts InfoWorkshop.all
+end
 
 # def create_playlist
 #     puts "what is the name of your workshop"
