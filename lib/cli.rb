@@ -34,10 +34,10 @@ end
     puts "do you want this song to be inward/outward/onward"
     "Type inward, outward, onward"
     choice1 = gets.chomp
-      # until [inward, outward, onward].include? choice1 do
-      #   puts "Please enter inward, outward, or onward.>"
-      #   choice1 = gets.chomp
-      # end
+      until ['inward', 'outward', 'onward'].include? choice1 do
+        puts "Please enter inward, outward, or onward."
+        choice1 = gets.chomp
+      end
 
     puts "Do you want this song to be vocal or instrumental"
     choice2 = gets.chomp
@@ -96,7 +96,7 @@ def user_input
      #elsif user_input == "quit"
      	 #return exit_workshop_playlist
      	user_input_for_playlist_continue(initial_workid, song)
-     #end
+     #endclea
    end
 
  end
@@ -142,8 +142,28 @@ def delete_workshop_selection
    "Your workshop has been deleted"
   end
 
+  def delete_song
+    display_workshops
+    puts "Select the number of the playlist that you want to edit"
+    playlist_id = gets.chomp.to_i
+    play_list_songs = InfoWorkshopSong.where(info_workshop_id: playlist_id)
+  
+    song_name_of_playlist =  play_list_songs.map do |el|
+      "#{el.id}) #{el.song.title} "
+    end
+    
+    puts song_name_of_playlist
 
-# def create_playlist
+    # iterate over play_list_songs
+    # print out infoworkshopsong_id and song name
+    # have a user select a infoworkshop song id to delete
+    # delete said song
+    # song = Song.find(id)
+    # song.destroy
+   
+  end
+
+# def create_playlists
 #     puts "what is the name of your workshop"
 #     workshop_name = ""
 #     workshop_name = gets.chomp

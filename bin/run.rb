@@ -1,7 +1,8 @@
 require_relative '../config/environment'
 
-all_workshops = display_workshops
-delete_workshop_selection
+# all_workshops = display_workshops
+# delete_workshop_selection
+delete_song
 # workshopid_to_destroy = delete_workshop_selection
 # info_workshop_songs_to_destroy(workshopid_to_destroy)
 
