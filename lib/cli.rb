@@ -154,8 +154,14 @@ def delete_workshop_selection
     
     puts song_name_of_playlist
 
-    # iterate over play_list_songs
-    # print out infoworkshopsong_id and song name
+    puts "Select the song number you want to delete"
+
+    selection = gets.chomp.to_i
+
+    InfoWorkshopSong.destroy(selection)
+    puts "Your Song has been deleted"
+    # iterate over play_list_songs *
+    # print out infoworkshopsong_id and song name *
     # have a user select a infoworkshop song id to delete
     # delete said song
     # song = Song.find(id)
