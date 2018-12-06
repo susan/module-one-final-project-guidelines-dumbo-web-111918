@@ -34,14 +34,29 @@ end
     puts "do you want this song to be inward/outward/onward"
     "Type inward, outward, onward"
     choice1 = gets.chomp
+      # until [inward, outward, onward].include? choice1 do
+      #   puts "Please enter inward, outward, or onward.>"
+      #   choice1 = gets.chomp
+      # end
+
     puts "Do you want this song to be vocal or instrumental"
     choice2 = gets.chomp
+      # until [vocal, instrumental].include? choice2 do
+      #   puts "Please enter vocal or instrumental.>"
+      # choice2 = gets.chomp
+      # end
+
     selection = Song.find_by(choice1, choice2)
     puts selection
     song_choice = ""
     puts "Select a song by title"
     song_choice = gets.chomp
-end
+
+      # until selection.include? song_choice do
+      #   puts "Please select a song by title.>"
+      # song_choice = gets.chomp
+      # end
+    end
 
 # song_choice = user_song_choice_for_playlist
 
@@ -55,6 +70,11 @@ end
 def user_input
   puts "Type next if you want to add another song. Or type quit to go back to the menu."
   input = gets.chomp
+
+    # until [next, quit].include? input do
+    #   puts "Type next if you want to add another song. Or type quit to go back to the menu.>"
+    #   input = gets.chomp
+    # end
  end
 
  #is this the recursive case?
@@ -104,9 +124,24 @@ def user_input
  end
 
 
-def delete_song
-	 puts InfoWorkshop.all
+def display_workshops
+   workshops = InfoWorkshop.show_workshops_by_name
+   puts workshops
+   #make sure to output the workshops to the screen but return workshops as objects
+   workshops
 end
+
+def delete_workshop_selection
+  display_workshops
+   # workshops = InfoWorkshop.show_workshops_by_name
+   #  puts workshops
+   puts "Please enter the number of the playlist you would like to delete.
+   Be careful, as this is not reversible!"
+   selection = gets.chomp.to_i
+   InfoWorkshop.destroy(selection)
+   "Your workshop has been deleted"
+  end
+
 
 # def create_playlist
 #     puts "what is the name of your workshop"
@@ -134,6 +169,23 @@ end
 #     songid = song_object[0].id
 #     our_first_song = InfoWorkshopSong.create(song_id: songid, info_workshop_id: workshopid)
 # end
+
+
+# def delete_workshop_selection
+#   workshops = InfoWorkshop.show_workshops_by_name
+#    puts workshops
+#   puts "Please enter the number of the workshop you would like to delete."
+#   selection = gets.chomp.to_i
+#   #InfoWorkshop.destroy(selection)
+#  end
+
+#  def info_workshop_songs_to_destroy(workshopid_to_destroy)
+#  collection= InfoWorkshopSong.find_by_workshop_id
+#    total_records_to_destroy = collection.select do |song|
+#         song.workshop_id == workshopid_to_destroy
+#     end
+#     total_records_to_destroy.destroy
+#  end
 
 
 
