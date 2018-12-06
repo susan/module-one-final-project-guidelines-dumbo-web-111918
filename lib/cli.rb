@@ -101,22 +101,6 @@ def user_input
 
  end
 
-# def user_input_for_playlist_continue
-#   puts "Type next if you want to add another song. Or type quit to go back to the menu"
-#   input = gets.chomp
-#   while input
-#   	puts "Type next if you want to add another song. Or type quit to go back to the menu"
-#     input = gets.chomp
-#   	  case input
-#   	  when "next"
-#   	  	add_song
-#   	  else "quit"
-#         exit_workshop_playlist
-#         break
-#       end
-#    end
-# end
-
 
  def create_playlist(initial_workid, song)
      # create_workshop_title
@@ -165,53 +149,8 @@ def delete_workshop_selection
     # have a user select a infoworkshop song id to delete
     # delete said song
     # song = Song.find(id)
-    # song.destroy
-   
+    # song.destroy  
   end
-
-# def create_playlists
-#     puts "what is the name of your workshop"
-#     workshop_name = ""
-#     workshop_name = gets.chomp
-#     #Student.create(name: 'Jon'), this is the idea for create a row
-#      our_workshop = InfoWorkshop.create(name: workshop_name)
-#      workshopid = our_workshop.id
-#     choice1 = ""
-#     choice2 = ""
-#     puts "do you want this song to be inward/outward/onward"
-#     "Type inward, outward, onward"
-#     #binding.pry
-#     choice1 = gets.chomp
-#     puts "Do you want this song to be vocal or instrumental"
-#     choice2 = gets.chomp
-#     selection = Song.find_by(choice1, choice2)
-#     puts selection
-#     song_choice = ""
-#     puts "Select a song by title"
-#     song_choice = gets.chomp
-#     #song_object = Song.find_by(title: song_choice)
-#     #binding.pry
-#     song_object = Song.where(:title => song_choice)
-#     songid = song_object[0].id
-#     our_first_song = InfoWorkshopSong.create(song_id: songid, info_workshop_id: workshopid)
-# end
-
-
-# def delete_workshop_selection
-#   workshops = InfoWorkshop.show_workshops_by_name
-#    puts workshops
-#   puts "Please enter the number of the workshop you would like to delete."
-#   selection = gets.chomp.to_i
-#   #InfoWorkshop.destroy(selection)
-#  end
-
-#  def info_workshop_songs_to_destroy(workshopid_to_destroy)
-#  collection= InfoWorkshopSong.find_by_workshop_id
-#    total_records_to_destroy = collection.select do |song|
-#         song.workshop_id == workshopid_to_destroy
-#     end
-#     total_records_to_destroy.destroy
-#  end
 
 
 
