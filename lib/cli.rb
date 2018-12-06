@@ -1,4 +1,5 @@
 
+
   def menu
     puts "Here are your options:
      - menu: displays this menu
@@ -43,6 +44,7 @@ end
 end
 
 # song_choice = user_song_choice_for_playlist
+
 
 def add_song(initial_workid, song_choice)
     song_object = Song.where(:title => song_choice)
@@ -131,7 +133,6 @@ end
 #     songid = song_object[0].id
 #     our_first_song = InfoWorkshopSong.create(song_id: songid, info_workshop_id: workshopid)
 # end
-
 
 
 
