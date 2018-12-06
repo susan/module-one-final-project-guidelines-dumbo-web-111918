@@ -1,15 +1,27 @@
 
-
-  def menu
+  # add: add a song to an existing playlist
+  #  see: displays the songs in a playlist
+def menu
     puts "Here are your options:
      - menu: displays this menu
-       create: create a playlist and add songs
-     - #add: add a song to an existing playlist
-       delete: delete a song from an existing playlist
-       see: displays the songs in a playlist
-
+     - create: create a playlist and add songs
+     - deleteSong: deletes a song from an existing playlist  
+     - deletePlaylist: delete a playlist
      - exit: exits this program"
+end
+
+  def menu_input
+    puts "Please enter an option"
+    input = gets.chomp
   end
+
+  def welcome 
+    puts "Welcome Playlist Creator!"
+  end
+
+  def exit
+    puts "Good Bye" 
+  end 
 
   def exit_workshop_playlist
     puts "Finished playlist, back to main menu"
@@ -26,7 +38,6 @@ def create_workshop_title
 end
 
 # initial_workid = create_workshop_title
-
 
  def user_song_choice_for_playlist
 	  choice1 = ""
@@ -123,7 +134,7 @@ def delete_workshop_selection
    Be careful, as this is not reversible!"
    selection = gets.chomp.to_i
    InfoWorkshop.destroy(selection)
-   "Your workshop has been deleted"
+   puts "Your workshop has been deleted"
   end
 
   def delete_song
