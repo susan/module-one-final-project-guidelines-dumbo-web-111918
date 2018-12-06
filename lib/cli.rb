@@ -4,6 +4,7 @@ require 'pry'
 def menu
     puts "Here are your options:
      - menu: displays this menu
+     - display: displays playlists
      - create: create a playlist and add songs
      - deleteSong: deletes a song from an existing playlist
      - deletePlaylist: delete a playlist

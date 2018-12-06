@@ -20,6 +20,10 @@ end
          menu
          user_input = runs_options
          #had to override user_input to make it recursive and not the question
+        when "display"
+         display_workshops
+         menu
+         user_input = runs_options
         when "create"
          initial_workid = create_workshop_title
          song_choice = user_song_choice_for_playlist
