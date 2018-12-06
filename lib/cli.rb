@@ -1,6 +1,9 @@
 def create_playlist
     puts "what is the name of your workshop"
+    workshop_name = ""
     workshop_name = gets.chomp
+    #Student.create(name: 'Jon'), this is the idea for create a row
+     our_workshop = InfoWorkshop.create(name: workshop_name)
     choice1 = ""
     choice2 = ""
     puts "do you want this song to be inward/outward/onward"
