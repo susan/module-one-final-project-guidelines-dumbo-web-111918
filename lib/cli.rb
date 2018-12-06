@@ -59,12 +59,13 @@ def user_input
 
  #is this the recursive case?
  def user_input_for_playlist_continue(initial_workid, song)
-   user_input
-   if user_input == "quit"
+   input = user_input
+   #the only way out of running it again, is save to variable, then it only gets return value
+   if input == "quit"
      return exit_workshop_playlist
      #break
    end
-   while user_input != "quit"
+   while input != "quit"
    	#puts "Type next if you want to add another song. Or type quit to go back to the menu."
     #input = gets.chomp
       #if user_input == "next"
