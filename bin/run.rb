@@ -1,21 +1,25 @@
 require_relative '../config/environment'
 
+
+
 def runs_options
 
 user_input = menu_input
 
 if user_input == "exit"
-    return exit 
+    return exit
 end
 
     while user_input != "exit"
-    #  puts "Please enter an option"
-    #  input = gets.chomp
+     #puts "Please enter an option"
+     #input = gets.chomp
 
-        case user_input 
+        case user_input
+        	#we had to define this as user_imput instead of input
         when "menu"
-        menu
-        user_input = runs_options   #  user_input
+         menu
+         user_input = runs_options
+         #had to override user_input to make it recursive and not the question
         when "create"
          initial_workid = create_workshop_title
          song_choice = user_song_choice_for_playlist
@@ -30,11 +34,15 @@ end
         when "deletePlaylist"
          delete_workshop_selection
          menu
-         user_input= runs_options
+         user_input = runs_options
+        else
+        	puts "You gave me #{user_input} -- I have no idea what to do with that. See ya soon!"
+        	return
+       # 	 user_input = runs_options
       end
-      
-    end 
-      
+        #runs_options
+    end
+
 end
 
 welcome

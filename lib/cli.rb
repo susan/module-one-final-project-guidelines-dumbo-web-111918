@@ -20,7 +20,7 @@ end
   end
 
   def exit
-    puts "Goodbye"
+    puts "Goodbye!"
   end
 
   def exit_workshop_playlist
@@ -29,7 +29,7 @@ end
   end
 
 def create_workshop_title
-  puts "what is the name of your workshop"
+  puts "What is the name of your workshop?"
     workshop_name = ""
     workshop_name = gets.chomp
     #Student.create(name: 'Jon'), this is the idea for create a row
@@ -42,7 +42,7 @@ end
  def user_song_choice_for_playlist
 	  choice1 = ""
     choice2 = ""
-    puts "do you want this song to be inward/outward/onward"
+    puts "Do you want this song to be inward/outward/onward"
     "Type inward, outward, onward"
     choice1 = gets.chomp
       until ['inward', 'outward', 'onward'].include? choice1 do
@@ -86,7 +86,7 @@ def user_input
   input = gets.chomp
 
      until ["next", "quit"].include? input do
-       puts "Type next if you want to add another song. Or type quit to go back to the menu.>"
+       puts "Type next if you want to add another song. Or type quit to go back to the menu."
       input = gets.chomp
      end
      input
@@ -153,7 +153,7 @@ def delete_workshop_selection
 
     puts song_name_of_playlist
 
-    puts "Select the song number you want to delete"
+    puts "Select the song number you want to delete. Be careful, as this is not reversible!"
 
     selection = gets.chomp.to_i
 
