@@ -1,6 +1,5 @@
 require 'pry'
-  # add: add a song to an existing playlist
-  #  see: displays the songs in a playlist
+
 def menu
     puts "Here are your options:
      - menu: displays this menu
