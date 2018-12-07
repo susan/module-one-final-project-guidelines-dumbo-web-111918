@@ -42,8 +42,8 @@ end
 # initial_workid = create_workshop_title
 
  def user_song_choice_for_playlist
-	  choice1 = ""
-    choice2 = ""
+	  #choice1 = ""
+    #choice2 = ""
     puts "Do you want this song to be inward/outward/onward"
     "Type inward, outward, onward"
     choice1 = gets.chomp

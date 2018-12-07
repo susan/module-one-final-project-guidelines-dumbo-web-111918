@@ -49,7 +49,7 @@ end
          menu
          user_input = runs_options
         else
-        	puts "You gave me #{user_input} -- I have no idea what to do with that. See ya soon!"
+        	puts "You gave me #{user_input} -- Hope you enjoyed Playlist Creater. See ya soon!"
         	return
        # 	 user_input = runs_options
       end
