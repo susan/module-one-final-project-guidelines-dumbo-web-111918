@@ -4,6 +4,7 @@ def menu
     puts "Here are your options:
      - menu: displays this menu
      - display: displays playlists
+       show playlist songs: displays songs for a playlist
      - create: create a playlist and add songs
      - deleteSong: deletes a song from an existing playlist
      - deletePlaylist: delete a playlist
@@ -167,5 +168,15 @@ def delete_workshop_selection
     # song.destroy
   end
 
-
+def show_a_playlist
+    display_workshops
+    puts "Select the number of the playlist that you want to show"
+    playlist_id = gets.chomp.to_i
+    play_list_songs = InfoWorkshopSong.where(info_workshop_id: playlist_id)
+    song_name_of_playlist =  play_list_songs.map do |el|
+      "#{el.id}) #{el.song.title} "
+    end
+    puts song_name_of_playlist
+    #binding.pry
+ end
 

@@ -22,6 +22,10 @@ end
          display_workshops
          menu
          user_input = runs_options
+        when "show playlist songs"
+          show_a_playlist
+          menu
+          user_input = runs_options
         when "create"
          initial_workid = create_workshop_title
          song_choice = user_song_choice_for_playlist
