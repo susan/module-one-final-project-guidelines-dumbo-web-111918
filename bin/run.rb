@@ -1,5 +1,7 @@
 require_relative '../config/environment'
 
+
+
 def runs_options
 
 user_input = menu_input
@@ -24,6 +26,11 @@ end
          user_input = runs_options
         when "show playlist songs"
           show_a_playlist
+          menu
+          user_input = runs_options
+        when "play a song"
+          #songs_to_play = songs_to_play
+          play(songs_to_play)
           menu
           user_input = runs_options
         when "create"

@@ -4,7 +4,8 @@ def menu
     puts "Here are your options:
      - menu: displays this menu
      - display: displays playlists
-       show playlist songs: displays songs for a playlist
+     - show playlist songs: displays songs for a playlist
+     - play a song: plays a song from a playlist
      - create: create a playlist and add songs
      - deleteSong: deletes a song from an existing playlist
      - deletePlaylist: delete a playlist
@@ -180,3 +181,37 @@ def show_a_playlist
     #binding.pry
  end
 
+
+def songs_to_play
+my_songs = {
+"Pai Calls the Whales" => '/Users/tigger/Data/web/webdeveloper/Flatiron/FMod1/module-one-final-project-guidelines-dumbo-web-111918/lib/songs/07\ Pai\ Calls\ the\ Whales.m4a',
+"Paparazzi" => '/Users/tigger/Data/web/webdeveloper/Flatiron/FMod1/module-one-final-project-guidelines-dumbo-web-111918/lib/songs/09\ Paparazzi.mp3',
+"Flow" => '/Users/tigger/Data/web/webdeveloper/Flatiron/FMod1/module-one-final-project-guidelines-dumbo-web-111918/lib/songs/13\ Flow.mp3',
+"Come on Up for the Rising" => '/Users/tigger/Data/web/webdeveloper/Flatiron/FMod1/module-one-final-project-guidelines-dumbo-web-111918/lib/songs/13\ The\ Rising.m4a',
+"Come Rain or Come Shine" => '/Users/tigger/Data/web/webdeveloper/Flatiron/FMod1/module-one-final-project-guidelines-dumbo-web-111918/lib/songs/16\ Come\ Rain\ or\ Shine.mp3'
+}
+end
+
+# def list(my_songs)
+#   #this method is different! Collect the keys of the my_songs hash and
+#   puts my_songs.keys
+# end
+
+def play(songs_to_play)
+  show_a_playlist
+  #this method is slightly different!
+  #you should still ask the user for input and collect their song choice
+  #this time, only allow user's to input a song name
+  #check to see if the name they give is in fact a key of the my_songs hash
+  #if it isn't, tell them their choice is invalid
+  #if it is, play the song using the system 'open <file path>' syntax
+  #get the file path of the song by looking it up in the my_songs hash
+  puts "Please enter a song name:"
+    choice = gets.chomp
+    #binding.pry
+     if songs_to_play.keys.include?(choice)
+      puts `open #{songs_to_play[choice]}`
+     else
+      puts "Invalid input, please try again"
+    end
+end
