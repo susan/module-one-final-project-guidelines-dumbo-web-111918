@@ -1,7 +1,5 @@
 require_relative '../config/environment'
 
-
-
 def runs_options
 
 user_input = menu_input
@@ -58,10 +56,6 @@ runs_options
 # delete_song
 # workshopid_to_destroy = delete_workshop_selection
 # info_workshop_songs_to_destroy(workshopid_to_destroy)
-
-
-
 # add_song(initial_workid)
 # user_input_for_playlist_continue
 
-# puts "HELLO WORLD"
