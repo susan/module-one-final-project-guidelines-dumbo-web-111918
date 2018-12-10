@@ -15,7 +15,7 @@ end
      #input = gets.chomp
 
         case user_input
-        	#we had to define this as user_imput instead of input
+        	#we had to define this as user_input instead of input
         when "menu"
          menu
          user_input = runs_options
@@ -48,9 +48,9 @@ end
          delete_workshop_selection
          menu
          user_input = runs_options
-        else
-        	puts "You gave me #{user_input} -- Hope you enjoyed Playlist Creater. See ya soon!"
-        	return
+        # else
+        # 	puts "You gave me #{user_input} -- Hope you enjoyed Playlist Creater. See ya soon!"
+        # 	return
        # 	 user_input = runs_options
       end
         #runs_options
@@ -69,4 +69,3 @@ runs_options
 # info_workshop_songs_to_destroy(workshopid_to_destroy)
 # add_song(initial_workid)
 # user_input_for_playlist_continue
-

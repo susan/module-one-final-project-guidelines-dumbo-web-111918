@@ -1,6 +1,7 @@
 require 'pry'
 
 def menu
+  puts "---------------------"
     puts "Here are your options:
      - menu: displays this menu
      - display: displays playlists
@@ -10,6 +11,7 @@ def menu
      - deleteSong: deletes a song from an existing playlist
      - deletePlaylist: delete a playlist
      - exit: exits this program"
+     puts "---------------------"
 end
 
   def menu_input
@@ -21,13 +23,14 @@ end
     puts "Welcome Playlist Creator!"
   end
 
-  def exit
-    puts "Goodbye!"
+  def exit_the_program
+    puts "Goodbye, hope you enjoyed Playlist Creator. See ya soon!"
+    exit
   end
 
   def exit_workshop_playlist
     puts "Finished playlist, back to main menu"
-   menu
+   return menu
   end
 
 def create_workshop_title
@@ -60,7 +63,9 @@ end
        end
 
     selection = Song.find_by(choice1, choice2)
+    puts ""
     puts selection
+    puts ""
     #binding.pry
     song_choice = ""
     puts "Select a song by title"
@@ -86,7 +91,6 @@ end
 def user_input
   puts "Type next if you want to add another song. Or type quit to go back to the menu."
   input = gets.chomp
-
      until ["next", "quit"].include? input do
        puts "Type next if you want to add another song. Or type quit to go back to the menu."
       input = gets.chomp
@@ -97,10 +101,10 @@ def user_input
  #is this the recursive case?
  def user_input_for_playlist_continue(initial_workid, song)
    input = user_input
+   #had to take out input =user_input as it was overriding so it was askign the question each time
    #the only way out of running it again, is save to variable, then it only gets return value
    if input == "quit"
-     return exit_workshop_playlist
-     #break
+    return exit_workshop_playlist
    end
    while input != "quit"
    	#puts "Type next if you want to add another song. Or type quit to go back to the menu."
@@ -112,8 +116,9 @@ def user_input
      #puts "Type next if you want to add another song. Or type quit to go back to the menu"
      #elsif user_input == "quit"
      	 #return exit_workshop_playlist
-     	user_input_for_playlist_continue(initial_workid, song)
-     #endclea
+       #we overrride the question here
+     	return input = user_input_for_playlist_continue(initial_workid, song)
+     #end
    end
 
  end
